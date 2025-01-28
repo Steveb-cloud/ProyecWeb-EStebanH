@@ -1,0 +1,33 @@
+<form [formGroup]="form" (ngSubmit)="guardarCambios()">
+  <div class="formulario-container">
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre" />
+      <mat-error *ngIf="form.controls.nombre?.invalid">
+        {{ obteneMensajeError('nombre') }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Fecha de Nacimiento</mat-label>
+      <input matInput formControlName="fechaNacimiento" type="date" />
+      <mat-error *ngIf="form.controls.fechaNacimiento?.invalid">
+        {{ obteneMensajeError('fechaNacimiento') }}
+      </mat-error>
+    </mat-form-field>
+
+    <div>
+      <label for="foto">Foto:</label>
+      <input id="foto" type="file" (change)="onArchivoSeleccionado($event)" formControlName="foto">
+      <mat-error *ngIf="form.controls.foto?.invalid">
+        {{ obteneMensajeError('foto') }}
+      </mat-error>
+    </div>
+
+    <div class="botones-container">
+      <button mat-raised-button color="primary" type="submit">Guardar</button>
+      <button mat-raised-button color="warn" type="button" >Cancelar</button>
+    </div>
+  </div>
+</form>
+
