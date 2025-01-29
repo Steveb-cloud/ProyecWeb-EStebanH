@@ -4,10 +4,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ActorDTO, ActorCreacionDTO } from '../actores';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-formulario-actor',
-  imports: [MatButtonModule, MatFormFieldModule, ReactiveFormsModule, MatInputModule],
+  imports: [MatButtonModule, MatFormFieldModule, ReactiveFormsModule, MatInputModule, CommonModule],
   templateUrl: './formulario-actores.component.html',
   styleUrls: ['./formulario-actores.component.css']
 })
@@ -31,7 +32,6 @@ export class FormularioActorComponent implements OnInit {
    
   }
   
-
   obteneMensajeError(campo: string): string {
     const control = this.form.get(campo);
     if (control?.hasError('required')) {
