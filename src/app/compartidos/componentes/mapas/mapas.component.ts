@@ -9,7 +9,7 @@ import { icon, latLng, LeafletMouseEvent, marker, Marker, MarkerOptions, tileLay
   styleUrl: './mapas.component.css'
 })
 export class MapasComponent {
-  /*ptions = {
+  options = {
     layers: [
       tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })
     ],
@@ -36,5 +36,5 @@ capas : Marker<any>[]=[];
   this.capas=[];
   this.capas.push(marker([latitud,longitud],this.MarkerOptions));
 }
-*/
+
 }
